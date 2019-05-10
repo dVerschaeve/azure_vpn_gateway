@@ -20,8 +20,8 @@ apt-get -y install docker-ce
 
 ### Deploy the different containers
 echo "Deploying Portainer"
-docker run -d --name='Portainer' -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer:/data portainer/portainer --restart always
+docker run -d --name='Portainer' --restart always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer:/data portainer/portainer 
 echo "Deploying TinyProxy"
-docker run -d --name='Tinyproxy' -v /docker/TinyProxy/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf -p 443:8888 --restart always dannydirect/tinyproxy:latest ANY
+docker run -d --name='Tinyproxy' --restart always -v /docker/TinyProxy:/etc/tinyproxy -p 443:8888 dannydirect/tinyproxy:latest ANY
 
 echo "All done, enjoy!"
