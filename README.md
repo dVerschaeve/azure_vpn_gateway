@@ -1,4 +1,4 @@
-# Azure OpenVPN Gateway
+ # Azure OpenVPN Gateway
 Azure OpenVPN Gateway for lab deployments
 
 As a consultant, I often work on customer guest WiFi networks which are often blocking any kind of traffic besides HTTP and HTTPS. This prevents me from executing validations against my lab environment running on Azure Virtual Machines and required a solution. I always wanted to get to know Docker and found this a suitable project to start to know the technology.
@@ -7,7 +7,7 @@ The idea was to have an OpenVPN server running on Azure VM that provides you VPN
 
 The idea resulted into the following Azure VM running Docker with the following containers:
   - Portainer: used to manage the different Docker containers
-  - TinyProxy: used to proxy the OpenVPN connection from TCP/443 towards TCP/1194
+  - TinyProxy: used to proxy the OpenVPN connection from TCP/443 towards TCP/1194 when my customer is blocking port TCP/1194 on their guest WiFi
   - OpenVPN: used for VPN connectivity
 
 ![Alt text](images/Image.png?raw=true "Overview")
