@@ -1,5 +1,5 @@
-# azure_vpn_gateway
-Azure VPN Gateway for lab deployments
+# Azure OpenVPN Gateway
+Azure OpenVPN Gateway for lab deployments
 
 As a consultant, I often work on customer guest WiFi networks which are often blocking any kind of traffic besides HTTP and HTTPS. This prevents me from executing validations against my lab environment running on Azure Virtual Machines and required a solution. I always wanted to get to know Docker and found this a suitable project to start to know the technology.
 
