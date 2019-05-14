@@ -42,7 +42,7 @@ docker run -v /docker/OpenVPN:/etc/openvpn --log-driver=none --rm kylemanna/open
 
 When you imported the OpenVPN client configuration file and want to make use of the TinyProxy component, add
 ```
-http-proxy <%HostName%> 443
+http-proxy <%AZUREDNSNAME%> 443
 ```
 Enjoy
 
