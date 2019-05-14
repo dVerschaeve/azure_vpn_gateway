@@ -19,7 +19,7 @@ Azure VM Requirements:
     - TCP/443
     - TCP/1194
     - TCP/9000
-  - A DNS name
+  - Dynamic Public IP and an Azure DNS name linked towards the VM (this allows you to shut down the OpenVPN VM when you are not using your lab, sparing some $'ers)
 
 ```
 # Install Docker and deploy Portainer and TinyProxy
@@ -27,7 +27,7 @@ wget -O - https://raw.githubusercontent.com/dVerschaeve/azure_vpn_gateway/master
 sudo usermod -a -G docker $USER
 
 #Install OpenVPN server
-docker run -v /docker/OpenVPN:/etc/openvpn --log-driver=none --rm kylemanna/openvpn ovpn_genconfig -N -b -d -D -u tcp://<%HOSTNAME%> -p "route <%AzureVirtualNetworkSubnet%> 255.255.255.0"
+docker run -v /docker/OpenVPN:/etc/openvpn --log-driver=none --rm kylemanna/openvpn ovpn_genconfig -N -b -d -D -u tcp://<%AZUREDNSNAME%> -p "route <%AzureVirtualNetworkSubnet%> 255.255.255.0"
 
 #Configure OpenVPN PKI
 docker run -v /docker/OpenVPN:/etc/openvpn --log-driver=none --rm -it kylemanna/openvpn ovpn_initpki
