@@ -4,7 +4,6 @@ mkdir /docker
 mkdir /docker/Portainer
 mkdir /docker/TinyProxy
 mkdir /docker/OpenVPN
-mkdir /docker/OpenVPNProfiles
 
 ### Download tinyproxy.conf file that allows OpenVPN connectivity
 echo "Downloading tinyproxy.conf configuration file"
